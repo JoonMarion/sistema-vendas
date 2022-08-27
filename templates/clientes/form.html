@@ -1,0 +1,46 @@
+{% extends 'model/base.html' %}
+
+{% block title %}Formulário - Clientes{% endblock %}
+
+{% block content %}
+<div class="fixed-top" id="result"></div>
+{% load static %}
+<div class="body-cards">
+    <div class="card shadow">
+        {% url 'cliente_form' as Add %}
+        {% if request.path == Add %}
+        <div class="col-8 mb-2 text-center">
+            <h1>Adicionar</h1>
+        </div>
+        {% else %}
+        <div class="col-8 mb-2 text-center">
+            <h1>Editar</h1>
+        </div>
+        {% endif %}
+
+        <div class="text-left">
+            <form name="form" id="form"
+                  action="{% if db %}{% url 'cliente_update' pk=db.cod_cliente %}{% else %}{% url 'cliente_create' %}{% endif %}"
+                  method="post">
+                <div class="row m-4">
+                    <div class="col">
+                        {% load crispy_forms_tags %}
+                        {% csrf_token %}
+                        {{form.nome_cliente|as_crispy_field}}
+                        {{form.cpf|as_crispy_field}}
+                        {{form.email|as_crispy_field}}
+                        {{form.renda|as_crispy_field}}
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="{% url 'cliente_lista' %}" class="icon me-2">
+                        <img src="{% static 'image/arrow.png' %}" title="Voltar" alt="Voltar">
+                    </a>
+                    <input type="image" class="icon" title="Salvar" value="Salvar" src="{% static 'image/save.png' %}">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

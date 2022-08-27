@@ -1,0 +1,56 @@
+{% extends 'model/base.html' %}
+
+{% block title %}Produtos{% endblock %}
+
+{% block content %}
+<div class="col-11 col-xxl-6 col-sm-8 m-auto text-center">
+    <h1>Produtos</h1>
+</div>
+
+<div class="col-6 col-xxl-4 col-sm-6 m-auto pt-2 pb-2" style="text-align: right;">
+    <a href="{% url 'produto_form' %}" class="btn btn-sm btn-primary">Adicionar</a>
+</div>
+
+<div class="col-8 col-xxl-5 col-sm-7 m-auto pt-2 pb-2" style="text-align: right;">
+    <form method="get">
+        <input type="text" id="search" name="search" class="form-control shadow" placeholder="Buscar...">
+    </form>
+</div>
+
+<div class="col-11 col-sm-10 col-xxl-8 m-auto pt-4 pb-2 text-center">
+    <table class="table table-bordered bg-white shadow">
+        <thead class="primary">
+            <tr class="tabelaFtpd">
+                <th scope="col">Código</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Unidade</th>
+                <th scope="col">Valor Unitário</th>
+                <th scope="col">Est. Atual</th>
+                <th scope="col">Est. Mínimo</th>
+                <th scope="col">Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dbs in db %}
+            <tr>
+                <td>{{dbs.cod_produto}}</td>
+                <td>{{dbs.descricao}}</td>
+                <td>{{dbs.unidade}}</td>
+                <td>{{dbs.valor_unitario}}</td>
+                <td>{{dbs.estoque_minimo}}</td>
+                <td>{{dbs.quantidade_estoque}}</td>
+                <td class="group">
+                    {% load static %}
+                    <a class="icon" href="{% url 'produto_edit' pk=dbs.cod_produto %}">
+                        <img src="{% static 'image/editar.png' %}" title="Editar" alt="Editar">
+                    </a>
+                    <a class="icon btnDel" href="{% url 'produto_delete' pk=dbs.cod_produto %}">
+                        <img src="{% static 'image/trash.svg' %}" title="Deletar" alt="Deletar">
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,122 @@
+/* ESTILIZAÇÃO GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e2e2e2;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+
+th {
+    font-size: 1.1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* CARDS DA HOMEPAGE DO PROJETO */
+.homepage {
+    width: 200px;
+    height: 170px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+/* ESTILIZAÇÃO DOS ÍCONES */
+.icon img {
+    width: 30px;
+    vertical-align: baseline;
+}
+
+.icon img:hover {
+    padding: 2px;
+    background-color: #ebebeb;
+    opacity: 0.3;
+    border-radius: 5px;
+}
+
+.icon img {
+    width: 30px;
+    vertical-align: baseline;
+}
+
+.icon:hover {
+    opacity: 0.3;
+    background-color: #ebebeb;
+}
+
+/* POSICIONAMENTO DOS CARDS DAS VIEWS E FORMS*/
+.body-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 100vw;
+    overflow: hidden;
+    overflow-y: auto;
+    margin: 0;
+}
+
+/* ESTILIZAÇÃO DOS CARDS DAS VIEWS E FORMS */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 2rem;
+    border-radius: 8px;
+    min-width: 330px;
+}
+
+/* TAMANHO DO FORM DA DESCRIÇÃO DO PRODUTO*/
+#id_descricao_produto {
+    height: 38px;
+}
+
+/* POP-UP DE SUCESSO NA INSERÇÃO*/
+#result {
+    margin-top: 90px;
+    margin-right: 40px;
+    margin-left: auto;
+    width: 220px;
+    height: 80px;
+}
+
+/* ESTILIZAÇÃO DAS TABELAS */
+th {
+    color: black;
+    text-align: center;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+td {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    table-layout: fixed;
+    height: 50px;
+
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hover-here td:hover {
+    height: 150px;
+    max-width: 100px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    white-space: initial;
+}
