@@ -42,31 +42,3 @@
         form.addEventListener('submit', sendForm, false);
     }
 })(window, document);
-
-// FUNÇÃO PARA MOSTRAR E OCULTAR SENHA NO FORM
-const passwordInput = document.getElementById('password');
-const eyeSvg = document.getElementById('eyeSvg');
-
-function eyeClick() {
-    let inputTypeIsPassword = passwordInput.type === 'password';
-
-    if (inputTypeIsPassword) {
-        showPassword();
-    } else {
-        hidePassword();
-    }
-}
-
-function showPassword() {
-    passwordInput.setAttribute('type', 'text');
-    var element = document.getElementById('eyeSvg');
-    var src = element.getAttribute('data-original');
-    element.setAttribute('src', src);
-}
-
-function hidePassword() {
-    passwordInput.setAttribute('type', 'password');
-    var element = document.getElementById('eyeSvg');
-    var src = element.getAttribute('data-original2');
-    element.setAttribute('src', src);
-}

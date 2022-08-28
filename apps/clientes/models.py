@@ -7,5 +7,8 @@ class Cliente(models.Model):
     nome_cliente = models.CharField(max_length=100)
     cpf = models.CharField(max_length=11)
     email = models.EmailField(max_length=100)
-    renda = models.DecimalField(max_digits=10, decimal_places=2)
-    classe = models.CharField(max_length=1)
+    renda = models.DecimalField(max_digits=20, decimal_places=2)
+    classe = models.CharField(max_length=2)
+
+    def __str__(self):
+        return self.nome_cliente

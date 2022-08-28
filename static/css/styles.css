@@ -77,11 +77,6 @@ a {
     min-width: 330px;
 }
 
-/* TAMANHO DO FORM DA DESCRIÇÃO DO PRODUTO*/
-#id_descricao_produto {
-    height: 38px;
-}
-
 /* POP-UP DE SUCESSO NA INSERÇÃO*/
 #result {
     margin-top: 90px;

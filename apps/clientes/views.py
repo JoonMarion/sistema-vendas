@@ -24,11 +24,12 @@ def cliente_create(request):
         post_data = request.POST
         post_data._mutable = True
         form = ClienteForm(request.POST or None)
-        if int(request.POST.get('renda')) > 4591:
+
+        if float(request.POST.get('renda')) > 4591:
             post_data['classe'] = 'AB'
-        elif int(request.POST.get('renda')) > 1064:
+        elif float(request.POST.get('renda')) > 1064:
             post_data['classe'] = 'C'
-        elif int(request.POST.get('renda')) > 768:
+        elif float(request.POST.get('renda')) > 768:
             post_data['classe'] = 'D'
         else:
             post_data['classe'] = 'E'
@@ -46,7 +47,18 @@ def cliente_edit(request, pk):
 
 def cliente_update(request, pk):
     data = {'db': Cliente.objects.get(pk=pk)}
+    post_data = request.POST
+    post_data._mutable = True
     form = ClienteForm(request.POST or None, instance=data['db'])
+    if float(request.POST.get('renda')) > 4591:
+        post_data['classe'] = 'AB'
+    elif float(request.POST.get('renda')) > 1064:
+        post_data['classe'] = 'C'
+    elif float(request.POST.get('renda')) > 768:
+        post_data['classe'] = 'D'
+    else:
+        post_data['classe'] = 'E'
+
     if form.is_valid():
         form.save()
         return redirect('cliente_form')

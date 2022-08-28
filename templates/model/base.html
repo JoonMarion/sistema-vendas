@@ -33,10 +33,10 @@
                         <a class="nav-link active" href="{% url 'cliente_lista' %}">Clientes</a>
                     </li>
                     <li class="nav-item ms-auto ps-1 pe-1">
-                        <a class="nav-link active" href="/">Vendas</a>
+                        <a class="nav-link active" href="{% url 'venda_lista' %}">Vendas</a>
                     </li>
                     <li class="nav-item ms-auto ps-1 pe-1">
-                        <a class="nav-link" href="/accounts/logout">Sair</a>
+                        <a class="nav-link active" href="{% url 'detalhe_venda_lista' %}">Detalhe das Vendas</a>
                     </li>
                 </ul>
             </div>

@@ -1,0 +1,41 @@
+{% extends 'model/base.html' %}
+
+{% block title %}Formulário - Detalhe da Venda{% endblock %}
+
+{% block content %}
+    <div class="fixed-top" id="result"></div>
+    {% load static %}
+    <div class="body-cards">
+        <div class="card shadow">
+
+            <div class="col-8 mb-2 text-center">
+                <h1>Detalhe da Venda</h1>
+            </div>
+
+            <div class="text-left">
+                <form name="form" id="form"
+                      action="{% url 'detalhe_venda_create' %}"
+                      method="post">
+                    <div class="row m-4">
+                        <div class="col">
+                            {% load crispy_forms_tags %}
+                            {% csrf_token %}
+                            {{form.codigo_venda|as_crispy_field}}
+                            {{form.cod_produto|as_crispy_field}}
+                            {{form.quantidade_produto|as_crispy_field}}
+
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="{% url 'detalhe_venda_lista' %}" class="icon me-2">
+                            <img src="{% static 'image/arrow.png' %}" title="Voltar" alt="Voltar">
+                        </a>
+                        <input type="image" class="icon" title="Salvar" value="Salvar"
+                               src="{% static 'image/save.png' %}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
