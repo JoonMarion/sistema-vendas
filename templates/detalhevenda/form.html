@@ -20,7 +20,6 @@
                         <div class="col">
                             {% load crispy_forms_tags %}
                             {% csrf_token %}
-                            {{form.codigo_venda|as_crispy_field}}
                             {{form.cod_produto|as_crispy_field}}
                             {{form.quantidade_produto|as_crispy_field}}
                         </div>

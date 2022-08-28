@@ -22,10 +22,9 @@ def venda_form(request):
 def venda_create(request):
     if request.method == 'POST':
         form = VendaForm(request.POST or None)
-        x = request.POST.get('cod_venda')
         if form.is_valid():
             form.save()
-            return redirect('detalhe_venda_form')
+        return redirect('detalhe_venda_form')
 
 
 def venda_edit(request, pk):

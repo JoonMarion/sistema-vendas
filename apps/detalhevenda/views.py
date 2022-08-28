@@ -2,6 +2,8 @@ from django.shortcuts import redirect, render
 
 from .forms import DetalheVendaForm
 from .models import DetalheVenda
+from ..produtos.models import Produto
+from ..vendas.models import Venda
 
 
 def detalhe_venda_lista(request):
@@ -19,10 +21,23 @@ def detalhe_venda_form(request):
     return render(request, 'detalhevenda/form.html', data)
 
 
+def atualiza_estoque(quantidade, cod_produto):
+    db = Produto.objects.get(pk=cod_produto)
+    print(db.quantidade_estoque)
+    db.quantidade_estoque = float(db.quantidade_estoque) - quantidade
+    db.save()
+    return redirect('detalhe_venda_form')
+
+
 def detalhe_venda_create(request):
     if request.method == 'POST':
         form = DetalheVendaForm(request.POST or None)
+        post_data = request.POST
+        post_data._mutable = True
+        post_data['cod_venda'] = Venda.objects.latest('cod_venda')
+        post_data._mutable = False
         if form.is_valid():
+            atualiza_estoque(float(request.POST.get('quantidade_produto')), request.POST.get('cod_produto'))
             form.save()
             return redirect('detalhe_venda_form')
 
