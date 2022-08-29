@@ -10,7 +10,7 @@ def detalhe_venda_lista(request):
     data = {}
     search = request.GET.get('search')
     if search:
-        data['db'] = DetalheVenda.objects.filter(descricao_produto__icontains=search)
+        data['db'] = DetalheVenda.objects.filter(cod_venda_id__icontains=search)
     else:
         data['db'] = DetalheVenda.objects.all()
     return render(request, 'detalhevenda/lista.html', data)

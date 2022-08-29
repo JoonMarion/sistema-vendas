@@ -12,6 +12,8 @@ class VendaForm(forms.ModelForm):
         model = Venda
         fields = ('cod_venda', 'cod_cliente', 'data_venda')
 
+        labels = {'cod_cliente': 'Cliente', 'data_venda': 'Data da Venda',}
+
         widgets = {
             'data_venda': DateInput(),
         }

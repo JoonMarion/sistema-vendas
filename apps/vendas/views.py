@@ -8,7 +8,7 @@ def venda_lista(request):
     data = {}
     search = request.GET.get('search')
     if search:
-        data['db'] = Venda.objects.filter(descricao_produto__icontains=search) | Venda.objects.filter(cod_produto__icontains=search)
+        data['db'] = Venda.objects.filter(cod_venda__icontains=search)
     else:
         data['db'] = Venda.objects.all()
     return render(request, 'vendas/lista.html', data)

@@ -8,7 +8,8 @@ def cliente_lista(request):
     data = {}
     search = request.GET.get('search')
     if search:
-        data['db'] = Cliente.objects.filter(nome_cliente__icontains=search)
+        data['db'] = Cliente.objects.filter(nome_cliente__icontains=search) | Cliente.objects.filter(
+            cod_cliente__icontains=search) | Cliente.objects.filter(cpf__icontains=search)
     else:
         data['db'] = Cliente.objects.all()
     return render(request, 'clientes/lista.html', data)
