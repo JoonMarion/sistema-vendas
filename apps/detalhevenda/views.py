@@ -30,11 +30,11 @@ def atualiza_estoque(quantidade, cod_produto):
     return redirect('detalhe_venda_form')
 
 
-def valor_total(request, quantidade, cod_produto):
+def valor_total(quantidade, cod_produto):
     data = Produto.objects.get(pk=cod_produto)
     resultado = float(data.valor_unitario) * float(quantidade)
-    print(resultado)
-    return render(request, 'detalhevenda/form.html', {'resultado': resultado})
+    context = {'resultado': resultado}
+    return context
 
 
 def detalhe_venda_create(request):
@@ -46,9 +46,9 @@ def detalhe_venda_create(request):
         post_data._mutable = False
         if form.is_valid():
             atualiza_estoque(float(request.POST.get('quantidade_produto')), request.POST.get('cod_produto'))
-            valor_total(request, float(request.POST.get('quantidade_produto')), request.POST.get('cod_produto'))
+            context = valor_total(float(request.POST.get('quantidade_produto')), request.POST.get('cod_produto'))
             form.save()
-            return redirect('detalhe_venda_form')
+            return render(request, 'detalhevenda/venda.html', context)
 
 
 def detalhe_venda_edit(request, pk):

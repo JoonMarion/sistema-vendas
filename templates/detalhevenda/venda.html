@@ -1,0 +1,20 @@
+{% extends 'model/base.html' %}
+
+{% block title %}Total da Venda{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <div class="body-cards">
+        <div class="card shadow">
+            <div class="card" style="width: 450px;">
+                <div class="card-body">
+                    <h2 class="card-title">Valor total da venda:</h2>
+                    <p class="card-text" style="font-size: 1.3rem;">R${{ resultado }}</p>
+                    <a href="{% url 'venda_lista' %}" class="card-link">Tabela de Vendas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
