@@ -24,7 +24,6 @@
                             {{form.quantidade_produto|as_crispy_field}}
                         </div>
                     </div>
-
                     <div class="text-center">
                         <a href="{% url 'detalhe_venda_lista' %}" class="icon me-2">
                             <img src="{% static 'image/arrow.png' %}" title="Voltar" alt="Voltar">
@@ -33,6 +32,8 @@
                                src="{% static 'image/save.png' %}">
                     </div>
                 </form>
+
+                {{ resultado }}
             </div>
         </div>
     </div>
