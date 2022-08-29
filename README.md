@@ -9,7 +9,7 @@
 </ul>
 
 
-## Startando a API no seu pc:
+## Startando o sistema no seu pc:
 
 * 1 - clone o repositório, utilizando o terminal, com o git previamente instalado no pc, digite o comando:
 
