@@ -1,7 +1,7 @@
 # 📍 sistema-de-vendas
 
-<p>Este repositório é destinado ao sistema de vendas<p/>
-<h3>tecnologias utilizadas</h3>
+<p>:warning: Este repositório é destinado ao sistema de vendas<p/>
+<h3>:computer: tecnologias utilizadas</h3>
 <ul>
   <li>Linguagem: Python</li>
   <li>Framework: Django rest framework</li>
@@ -9,7 +9,7 @@
 </ul>
 
 
-## Startando o sistema no seu pc:
+## :play_or_pause_button: Startando o sistema no seu pc:
 
 * 1 - clone o repositório, utilizando o terminal, com o git previamente instalado no pc, digite o comando:
 
@@ -66,10 +66,10 @@ or
 
 <p> se tudo ocorrer bem, a api estará funcionando, você pode utilizar o postman para teste de verbos http ✔️ <p/>
 
-:rotating_light::rotating_light::rotating_light:
-<h3>Comandos importantes</h3>
+
+<h3>:rotating_light::rotating_light::rotating_light: Comandos importantes :rotating_light::rotating_light::rotating_light:</h3>
 <ul>
   <li>python manage.py makemigrations -> comando prepara as migrações para o banco de dados</li>
   <li>python manage.py migrate -> comando realiza as migrações para o banco de dados</li>
 </ul>
-:rotating_light::rotating_light::rotating_light:
+
