@@ -9,7 +9,7 @@ def venda_lista(request):
     search = request.GET.get('search')
     if search:
         data['db'] = Venda.objects.filter(cod_venda__icontains=search) | Venda.objects.filter(
-            cod_cliente=search)
+            cod_cliente=search) | Venda.objects.filter(data_venda__icontains=search)
     else:
         data['db'] = Venda.objects.all()
     return render(request, 'vendas/lista.html', data)
