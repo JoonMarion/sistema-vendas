@@ -8,7 +8,8 @@ def venda_lista(request):
     data = {}
     search = request.GET.get('search')
     if search:
-        data['db'] = Venda.objects.filter(descricao_produto__icontains=search) | Venda.objects.filter(cod_produto__icontains=search)
+        data['db'] = Venda.objects.filter(cod_venda__icontains=search) | Venda.objects.filter(
+            cod_cliente=search) | Venda.objects.filter(data_venda__icontains=search)
     else:
         data['db'] = Venda.objects.all()
     return render(request, 'vendas/lista.html', data)
@@ -24,7 +25,7 @@ def venda_create(request):
         form = VendaForm(request.POST or None)
         if form.is_valid():
             form.save()
-            return redirect('detalhe_venda_form')
+        return redirect('detalhe_venda_form')
 
 
 def venda_edit(request, pk):

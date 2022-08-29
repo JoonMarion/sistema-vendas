@@ -11,4 +11,4 @@ class Cliente(models.Model):
     classe = models.CharField(max_length=2)
 
     def __str__(self):
-        return self.nome_cliente
+        return f'{self.cod_cliente} - {self.nome_cliente}'

@@ -2,64 +2,66 @@
 
 {% block title %}Página Inicial - Sistema de Vendas{% endblock %}
 {% block extracss %}
-<style>
-    h1 {
-        font-size: 3rem;
-        font-weight: normal;
-    }
+    <style>
+        h1 {
+            font-size: 3rem;
+            font-weight: normal;
+        }
 
-    .title {
-        margin-top: 0;
-        margin-bottom: 50px;
-    }
-</style>
+        .title {
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
-<div class="title text-center">
-    <h1><em>SISTEMA DE</em></h1>
-    <h1><em>VENDAS</em></h1>
-</div>
+    <div class="title text-center">
+        <h1><em>SISTEMA DE</em></h1>
+        <h1><em>VENDAS</em></h1>
+    </div>
 
-<div class="row ms-2 me-2" style="display: flex; justify-content: center; gap: 3rem">
-    <div class="card homepage shadow">
-        <div class="card-body text-center">
-            <h5 class="card-title">Produtos</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Gerência dos produtos</h6>
-            <div class="text-center">
-                <a href="{% url 'produto_lista' %}" class="btn btn-outline-primary btn-sm mt-1">ACESSAR</a>
+    <div class="row ms-2 me-2" style="display: flex; justify-content: center; gap: 3rem">
+        <div class="card homepage shadow">
+            <div class="card-body text-center">
+                <h5 class="card-title">Produtos</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Gerência dos produtos</h6>
+                <div class="text-center">
+                    <a href="{% url 'produto_lista' %}" class="btn btn-outline-primary btn-sm mt-1">ACESSAR</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card homepage shadow">
+            <div class="card-body text-center">
+                <h5 class="card-title">Clientes</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Gerência de clientes</h6>
+                <div class="text-center">
+                    <a href="{% url 'cliente_lista' %}" class="btn btn-outline-primary btn-sm mt-1">ACESSAR</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card homepage shadow">
+            <div class="card-body text-center">
+                <h5 class="card-title">Vendas</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Cadastrar Venda</h6>
+                <div class="text-center">
+                    <a href="{% url 'venda_lista' %}" class="btn btn-outline-primary btn-sm mt-1">ACESSAR</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card homepage shadow">
+            <div class="card-body text-center ">
+                <div class="my-auto">
+                    <h5 class="card-title">Detalhe das Vendas</h5>
+                    <div class="text-center">
+                        <a href="{% url 'detalhe_venda_lista' %}"
+                           class="btn btn-outline-primary btn-sm mt-1">ACESSAR</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="card homepage shadow">
-        <div class="card-body text-center">
-            <h5 class="card-title">Clientes</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Gerência de clientes</h6>
-            <div class="text-center">
-                <a href="{% url 'cliente_lista' %}" class="btn btn-outline-primary btn-sm mt-1">ACESSAR</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card homepage shadow">
-        <div class="card-body text-center">
-            <h5 class="card-title">Vendas</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Cadastrar Venda</h6>
-            <div class="text-center">
-                <a href="{% url 'venda_lista' %}" class="btn btn-outline-primary btn-sm mt-1">ACESSAR</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="card homepage shadow">
-        <div class="card-body text-center">
-            <h5 class="card-title">Detalhe das Vendas</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Visualizar os Detalhes das Vendas</h6>
-            <div class="text-center">
-                <a href="{% url 'detalhe_venda_lista' %}" class="btn btn-outline-primary btn-sm mt-1">ACESSAR</a>
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock %}
