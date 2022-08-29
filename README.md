@@ -1,7 +1,7 @@
 # 📍 sistema-de-vendas
 
 <p>Este repositório é destinado ao sistema de vendas<p/>
-<h3>tecnológias utilizadas</h3>
+<h3>tecnologias utilizadas</h3>
 <ul>
   <li>Linguagem: Python</li>
   <li>Framework: Django rest framework</li>
