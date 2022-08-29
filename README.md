@@ -1,6 +1,12 @@
 # 📍 sistema-de-vendas
 
-<p>Este repositório é destinado a construção de uma api de noticias com django e django rest framework<p/>
+<p>Este repositório é destinado ao sistema de vendas<p/>
+<h3>tecnológias utilizadas</h3>
+<ul>
+  <li>Linguagem: Python</li>
+  <li>Framework: Django rest framework</li>
+  <li>Banco de dados: SqlLite</li>
+</ul>
 
 
 ## Startando a API no seu pc:
@@ -8,36 +14,62 @@
 * 1 - clone o repositório, utilizando o terminal, com o git previamente instalado no pc, digite o comando:
 
 ```
-  git clone https://github.com/igor-dantas/sistema-de-vendas.git
+  git clone git@github.com:JoonMarion/sistema-vendas-POOII.git
+```
+or
+
+```
+ git clone https://github.com/JoonMarion/sistema-vendas-POOII.git
 ```
 
 * 2 - em seguida entre na pasta que será criada no seu pc, através do comando:
 ```
-  cd sistema-de-vendas
-```
-* 3 - após o passo 2, então rode o comando do docker, com o docker previamente instalado na máquina:
-
-```
-  docker-compose build
+  cd sistema-vendas-POOII
 ```
 
-* 4 - em seguida, rode o comando:
-```
-  docker-compose up
-```
-
-* 5 - se estiver tudo certo, será gerado um link parecido com este, no seu terminal:
+* 3 - após o passo 2, então com o python pré-instalado(3.10), instale o comando pip(windows):
 
 ```
-  http://0.0.0.0:8000
+  python get-pip.py
 ```
-* 5.1 - substitua 0.0.0.0 por localhost, gerando o link:
+or
+* 3.1 - instalação do comando pip no Linux:
 ```
-http://localhost:8000
+ sudo apt install pip
 ```
-* 6 - 🛑 após a utilização da api, recomendo que rode o comando abaixo, afim de interromper e remover os containers:
+
+* 4 - em seguida, rode o comando abaixo para gerar sua virtual env:
 ```
-  docker-compose down
+  python3 -m venv venv
+```
+
+* 5 - se estiver tudo certo, será gerado um arquivo venv no projeto, que será ignorado e não versionado, no seu terminal rode o comando abaixo para ativar sua venv (windows):
+
+```
+  venv/Scripts/Activate
+```
+or
+* 5.1 - para ativar sua venv no linux, rode o comando abaixo:
+
+```
+  source venv/bin/Activate
+```
+* 6 - após ativada sua virtual env, irá aparecer o nome dela no seu terminal acima do seu command line, sem seguida rode o comando abaixo, para baixar as dependências do projeto:
+```
+  pip install -r requirements.txt
+```
+
+* 7 - Uma vez instalada as dependências, rode o comando abaixo para rodar o sistema:
+```
+  python manage.py runserver
 ```
 
 <p> se tudo ocorrer bem, a api estará funcionando, você pode utilizar o postman para teste de verbos http ✔️ <p/>
+
+:rotating_light::rotating_light::rotating_light:
+<h3>Comandos importantes</h3>
+<ul>
+  <li>python manage.py makemigrations -> comando prepara as migrações para o banco de dados</li>
+  <li>python manage.py migrate -> comando realiza as migrações para o banco de dados</li>
+</ul>
+:rotating_light::rotating_light::rotating_light:
