@@ -54,7 +54,11 @@ or
 ```
   source venv/bin/Activate
 ```
-* 6 - após ativada sua virtual env, irá aparecer o nome dela no seu terminal acima do seu command line, sem seguida rode o comando abaixo, para baixar as dependências do projeto:
+* 6 - se for necessário, execute este comando antes de prosseguir com os próximos passos:
+```
+  pip install virtualenv
+```
+* 6.1 - após ativada sua virtual env, irá aparecer o nome dela no seu terminal acima do seu command line, sem seguida rode o comando abaixo, para baixar as dependências do projeto:
 ```
   pip install -r requirements.txt
 ```
